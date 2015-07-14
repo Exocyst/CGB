@@ -2,7 +2,7 @@
 
 version    = "v4.0.1"
 
-messagenew = "The wait is over, version 4.0.1 has landed!\n\nThis version:\n- contains many bug fixes and optimizations\n- Don't be a stranger, stop by our community forums and join in on the revolution \nhttps://gamebot.org"
+messagenew = "The wait is over, version 4.0.1 has landed!\n\nThis version:\n- contains many bug fixes and optimizations\n- Don't be a stranger, stop by our community forums and join in on the revolution"
 messageold = "Your version if out of date, please download the latest version at:\nhttps://gamebot.org"
 
 [old]
