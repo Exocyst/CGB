@@ -68,7 +68,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			Else
 				SetLog("Aim: [G]:" & StringFormat("%7s", $iAimGold[$x]) & " [E]:" & StringFormat("%7s", $iAimElixir[$x]) & " [D]:" & StringFormat("%5s", $iAimDark[$x]) & " [T]:" & StringFormat("%2s", $iAimTrophy[$x]) & $iAimTHtext[$x] & " for: " & $sModeText[$x], $COLOR_GREEN, "Lucida Console", 7.5)
 			EndIf
-			
+
 		EndIf
 	Next
 
@@ -195,12 +195,14 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			If _Sleep(1000 * $iAttackNowDelay) Then Return ; add human reaction time on AttackNow button function
 		EndIf
 		If $bBtnAttackNowPressed = True Then ExitLoop
-		Click(825, 527,1,0,"#0155") ;Click Next
+		ClickP($NextBtn,1,0,"#0155") ;Click Next
 		If _Sleep(500) Then Return
 		If isGemOpen(True) = True Then
 			Setlog(" Not enough gold to keep searching.....", $COLOR_RED)
 			Click(585, 252,1,0,"#0156")  ; Click close gem window "X"
+			If _Sleep(500) Then Return
 			$OutOfGold = 1  ; Set flag for out of gold to search for attack
+			ReturnHome(False, False)
 			Return
 		EndIf
 		$iSkipped = $iSkipped + 1
